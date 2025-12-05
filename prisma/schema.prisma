@@ -11,7 +11,7 @@ generator client {
 datasource db {
   provider  = "postgresql"
   schemas   = ["public", "assistent"]
-  url       = env("DATABASE_URL_SUPABASE")
+  url       = env("DATABASE_URL")
   directUrl = env("DATABASE_DIRECT_URL")
 }
 
