@@ -16,7 +16,7 @@ export default function getUserTransactions(
 ) {
   const start = new Date(startDate as string);
   const end = new Date(endDate as string);
-  end.setHours(23, 59, 59, 999);
+  end.setDate(end.getDate() + 1);
 
   const tokenNoBearer = token.replace('Bearer ', '');
   const decodedToken = jwt.verify(tokenNoBearer, JWT_SECRET) as JwtUserPayload;
