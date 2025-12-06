@@ -4,6 +4,63 @@ import {prisma} from '../lib/prisma';
 
 const router = Router();
 
+/**
+ * @openapi
+ * /webhook/messages:
+ *   post:
+ *     summary: Recebe mensagens do cliente e processa via webhook
+ *     tags:
+ *       - Webhook
+ *     security:
+ *       - bearerAuth: []   # Como você usa authMiddleware
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - userMessage
+ *               - userPhone
+ *               - id
+ *             properties:
+ *               id:
+ *                 type: string
+ *                 example: "msg-12345"
+ *               userPhone:
+ *                 type: string
+ *                 example: "+5511999999999"
+ *               userMessage:
+ *                 type: object
+ *                 properties:
+ *                   text:
+ *                     type: string
+ *                     example: "gastei 50 reais em comida"
+ *     responses:
+ *       200:
+ *         description: Mensagem processada com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 tipo:
+ *                   type: string
+ *                   example: "despesa"
+ *                 valor:
+ *                   type: number
+ *                   example: 50
+ *                 categoria:
+ *                   type: string
+ *                   example: "comida"
+ *                 comentario:
+ *                   type: string
+ *                   example: "gasto informado pelo usuário"
+ *       400:
+ *         description: Erro no processamento da mensagem
+ *       500:
+ *         description: Erro interno do servidor
+ */
 router.post('/messages', async (req: Request, res: Response) => {
   const ClientMessage = req.body;
 

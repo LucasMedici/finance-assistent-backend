@@ -5,6 +5,50 @@ import { signLoginToken, verifyPassword, hashPassword } from '../services/authSe
 
 const router = Router();
 
+/**
+ * @openapi
+ * /auth/signup:
+ *   post:
+ *     summary: Cria um novo usuário
+ *     tags:
+ *       - Auth
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 example: "user@example.com"
+ *               password:
+ *                 type: string
+ *                 example: "123456"
+ *               phone:
+ *                 type: string
+ *                 example: "5511999999999"
+ *     responses:
+ *       201:
+ *         description: Usuário criado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: string
+ *                 email:
+ *                   type: string
+ *                 phone:
+ *                   type: string
+ *       400:
+ *         description: Campos obrigatórios ausentes
+ *       409:
+ *         description: Usuário já existe
+ *       500:
+ *         description: Erro interno ao criar usuário
+ */
 router.post('/signup', async (req: Request, res: Response) => {
     const { email, password, phone } = req.body;
     if(!email || !password || !phone) {
@@ -27,6 +71,44 @@ router.post('/signup', async (req: Request, res: Response) => {
 })
 
 
+/**
+ * @openapi
+ * /auth/login:
+ *   post:
+ *     summary: Realiza login e retorna um token JWT
+ *     tags:
+ *       - Auth
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 example: "user@example.com"
+ *               password:
+ *                 type: string
+ *                 example: "123456"
+ *     responses:
+ *       200:
+ *         description: Login realizado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 token:
+ *                   type: string
+ *                   example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+ *       400:
+ *         description: Campos ausentes
+ *       401:
+ *         description: Credenciais inválidas
+ *       500:
+ *         description: Erro interno ao fazer login
+ */
 router.post('/login', async (req: Request, res: Response) => {
     const { email, password } = req.body;
     if(!email || !password) {
