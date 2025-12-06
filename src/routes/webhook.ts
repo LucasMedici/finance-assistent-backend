@@ -64,8 +64,9 @@ const router = Router();
 router.post('/messages', async (req: Request, res: Response) => {
   const ClientMessage = req.body;
 
-  console.log('Mensagem recebida');
-  console.log('Conteúdo: ', ClientMessage);
+  // console.log('Mensagem recebida');
+  // console.log('Conteúdo: ', ClientMessage);
+  // console.log('Telefone', ClientMessage.userMessage.userPhone);
 
   try {
     const messageProcessed = await processUserMessage(ClientMessage.userMessage.text);
@@ -80,7 +81,7 @@ router.post('/messages', async (req: Request, res: Response) => {
     try {
       await prisma.transaction.create({
         data: {
-          phone: ClientMessage.userPhone,
+          phone: ClientMessage.userMessage.userPhone,
           type: messageProcessed.tipo,
           amount: messageProcessed.valor,
           category: messageProcessed.categoria,
