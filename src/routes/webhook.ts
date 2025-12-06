@@ -1,9 +1,8 @@
 import { Router, Request, Response } from 'express';
 import { processUserMessage } from '../services/chatService';
-import { PrismaClient } from '../generated/prisma/client';
+import {prisma} from '../lib/prisma';
 
 const router = Router();
-const prisma = new PrismaClient();
 
 router.post('/messages', async (req: Request, res: Response) => {
   const ClientMessage = req.body;

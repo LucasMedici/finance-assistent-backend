@@ -1,7 +1,7 @@
-import { PrismaClient } from '../generated/prisma/client';
+import {prisma} from '../lib/prisma';
 import { z } from "zod";
 
-const prisma = new PrismaClient();
+
 
 export const CreateUserSchema = z.object({
     email: z.email('Email inválido'),

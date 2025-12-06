@@ -4,15 +4,17 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider  = "prisma-client"
+  output    = "../src/generated/prisma"
+  dataProxy = false
 }
 
 datasource db {
-  provider  = "postgresql"
-  schemas   = ["public", "assistent"]
-  url       = env("DATABASE_URL")
-  directUrl = env("DATABASE_DIRECT_URL")
+  provider     = "postgresql"
+  schemas      = ["public", "assistent"]
+  url          = env("DATABASE_URL")
+  directUrl    = env("DATABASE_DIRECT_URL")
+  relationMode = "prisma"
 }
 
 model transaction {

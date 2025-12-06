@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
-import { PrismaClient } from '../generated/prisma/client';
+import {prisma} from '../lib/prisma';
 
-const prisma = new PrismaClient();
+
 
 const JWT_SECRET = process.env.JWT_SECRET as string;
 
@@ -22,13 +22,16 @@ export default function getUserTransactions(
   const decodedToken = jwt.verify(tokenNoBearer, JWT_SECRET) as JwtUserPayload;
   const userPhone = decodedToken.phone;
 
-  console.log('Phone:', userPhone);
-  console.log('Start:', start);
-  console.log('End:', end);
-
   return prisma.transaction.findMany({
     where: {
       phone: userPhone,
+      createdAt: {
+        gte: start, // maior ou igual a startDate
+        lte: end,   // menor ou igual a endDate
+    },
+    },
+    orderBy: {
+      createdAt: 'desc',
     },
   });
 }
