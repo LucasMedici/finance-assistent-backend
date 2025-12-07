@@ -7,6 +7,9 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "moduleResolution": "node"
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }
