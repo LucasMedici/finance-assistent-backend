@@ -37,6 +37,41 @@ Handles user authentication, processes chat messages, stores expense data, and g
 ```bash
 yarn install
 # configure your .env with PORT, DATABASE_URL, OPENAI_API_KEY, JWT_SECRET, JWT_EXPIRES_IN etc (in .env.example)
-yarn start
+yarn dev
 # access full API documentation at http://localhost:PORT/api-docs
 ```
+
+---
+
+
+# ⚡ Backend App - PT-BR (Resumo)
+
+## 🚀 Overview
+API backend de um assistente financeiro virtual.
+Autenticação, processamento de mensagens, armazenamento de despesas e geração de relatórios.
+
+## 🛠 Tech Stack
+- **Node.js + TypeScript**
+- **Express.js**
+- **PostgreSQL via Prisma ORM**
+- **JWT para autenticação**
+- **Hospedado no Railway**
+- **Supabase para storage/realtime**
+- **Swagger / OpenAPI para documentação da API**
+  
+## 🔑 Features
+
+- **Auth: login JWT, validação de sessão 🔑**
+- **Chat: POST webhook/messages, mensagem de confirmação ✅**
+- **Despesas & Relatórios: registro de gastos, relatórios por categoria 📊**
+- **Segurança: middleware de auth, validação de entrada, dados seguros**
+- **Swagger / OpenAPI: Documentação completa da API disponível em /api-docs 📄**
+
+## ⚡ Quick Start
+```bash
+yarn install
+# configure o seu .env with PORT, DATABASE_URL, OPENAI_API_KEY, JWT_SECRET, JWT_EXPIRES_IN etc (exemplo em .env.example)
+yarn dev
+# acesse a documentação completa em http://localhost:PORT/api-docs
+```
+
