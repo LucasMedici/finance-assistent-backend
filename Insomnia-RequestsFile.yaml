@@ -1,0 +1,388 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1698368928522
+  modified: 1698368928522
+  description: ""
+collection:
+  - name: finance-assistant
+    meta:
+      id: fld_ba2d4a4548614d9ea3752fd0dc4916e1
+      created: 1761866255636
+      modified: 1765144827379
+      sortKey: -1761866255636
+      description: ""
+    children:
+      - name: localhost
+        meta:
+          id: fld_dfcc1c4a6675453e84f7f53d7273d028
+          created: 1761866266211
+          modified: 1762386510654
+          sortKey: -1761866266211
+          description: ""
+        children:
+          - url: http://localhost:3065/webhook/messages
+            name: webhook messages
+            meta:
+              id: req_e4832d3c866344e2bf719fea564a20a7
+              created: 1761866272395
+              modified: 1761953343663
+              isPrivate: false
+              description: ""
+              sortKey: -1761866272395
+            method: POST
+            body:
+              mimeType: application/x-www-form-urlencoded
+              params:
+                - name: Body
+                  value: gastei 30 no mercado
+                - name: From
+                  value: whatsapp:+5511999999999
+                  description: ""
+                  disabled: false
+            headers:
+              - name: Content-Type
+                value: application/x-www-form-urlencoded
+              - name: User-Agent
+                value: insomnia/11.6.1
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3065/serverstatus
+            name: server status
+            meta:
+              id: req_fb256e7fe86546ab99a8541b1d792248
+              created: 1761866417520
+              modified: 1762386360123
+              isPrivate: false
+              description: ""
+              sortKey: -1761866417520
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.2
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3065/auth/signup
+            name: register
+            meta:
+              id: req_43335eb1b83a4fe0be1198e056ab7739
+              created: 1763430219529
+              modified: 1763845152077
+              isPrivate: false
+              description: ""
+              sortKey: -1763430219529
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email":"andre@gmail.com",
+                	"password":"Lucci1203",
+                	"phone":"129347232111"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3065/auth/login
+            name: login
+            meta:
+              id: req_4e68495f10834312a26e7d07573d1c2b
+              created: 1763430482801
+              modified: 1763430663002
+              isPrivate: false
+              description: ""
+              sortKey: -1762908372743.5
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email":"lucas@gmail.com",
+                	"password":"Lucci1203"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.0.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3065/user/38bf0608-ee23-4d69-862a-283426619750
+            name: update user
+            meta:
+              id: req_cec907ae3c114d32be03f5cdd663662d
+              created: 1763940698180
+              modified: 1763940994403
+              isPrivate: false
+              description: ""
+              sortKey: -1763940698180
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name":"alaex"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3065/user/38bf0608-ee23-4d69-862a-283426619750
+            name: get user
+            meta:
+              id: req_16fd462974d94206b375a91bfddfdce0
+              created: 1763944389066
+              modified: 1763944411128
+              isPrivate: false
+              description: ""
+              sortKey: -1763944389066
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Ngrok
+        meta:
+          id: fld_6295183f5a9448fab5e11e5b7550761d
+          created: 1762386523671
+          modified: 1762386531737
+          sortKey: -1762386523671
+          description: ""
+        children:
+          - url: https://yadiel-inviolate-transactionally.ngrok-free.dev/serverstatus
+            name: server status
+            meta:
+              id: req_181de881549f4f668e595af9ec2419fd
+              created: 1762386525958
+              modified: 1763848814257
+              isPrivate: false
+              description: ""
+              sortKey: -1762386525958
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.6.2
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://yadiel-inviolate-transactionally.ngrok-free.dev/webhook/messages
+            name: webhook message
+            meta:
+              id: req_c37664cb1170499a8e66d37b89eca68f
+              created: 1762386556450
+              modified: 1762386584893
+              isPrivate: false
+              description: ""
+              sortKey: -1762126471739
+            method: POST
+            body:
+              mimeType: application/x-www-form-urlencoded
+              params:
+                - name: Body
+                  value: gastei 30 no mercado
+                  description: ""
+                  disabled: false
+                - name: From
+                  value: whatsapp:+5511999999999
+                  description: ""
+                  disabled: false
+            headers:
+              - name: Content-Type
+                value: application/x-www-form-urlencoded
+              - name: User-Agent
+                value: insomnia/11.6.2
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://yadiel-inviolate-transactionally.ngrok-free.dev/auth/login
+            name: login
+            meta:
+              id: req_e4041ec223aa42dfaf217cfb87352d73
+              created: 1763848735783
+              modified: 1763848800367
+              isPrivate: false
+              description: ""
+              sortKey: -1763848735783
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email":"lucas@gmail.com",
+                	"password":"Lucci1203"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://yadiel-inviolate-transactionally.ngrok-free.dev/auth/signup
+            name: register
+            meta:
+              id: req_62e8d239b90e48e389b7036804aabf1f
+              created: 1763935370915
+              modified: 1764978006247
+              isPrivate: false
+              description: ""
+              sortKey: -1763935370915
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"email":"aaaaa@gmail.com",
+                	"password":"Lucci1203",
+                	"phone":"0393472322111"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: https://yadiel-inviolate-transactionally.ngrok-free.dev/user/38bf0608-ee23-4d69-862a-283426619750
+            name: update name
+            meta:
+              id: req_069446b9a0074c7b955d2104a2365eca
+              created: 1763940589225
+              modified: 1763940647554
+              isPrivate: false
+              description: ""
+              sortKey: -1763940589225
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"name":"alex"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.1.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Railway
+        meta:
+          id: fld_4036df7ff6ed43f089e806342be16671
+          created: 1765136737154
+          modified: 1765136737154
+          sortKey: -1765136737154
+          description: ""
+  - name: library api
+    meta:
+      id: fld_08281ed4e1af4ed49988ecd88e0f21d1
+      created: 1764115011043
+      modified: 1764115167687
+      sortKey: -1764115011043
+      description: ""
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1698368947887
+    modified: 1764723384002
+  cookies:
+    - id: 32e42650-9a6c-47c2-8eda-44f7c108b58b
+      key: JSESSIONID
+      value: AC2D8B2B73D5B26FBBFA20BF2498CBD4
+      domain: localhost
+      path: /
+      secure: false
+      httpOnly: true
+      hostOnly: true
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1698368947817
+    modified: 1698368947817
+    isPrivate: false
