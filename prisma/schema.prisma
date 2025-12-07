@@ -4,9 +4,9 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 generator client {
-  provider  = "prisma-client"
-  output    = "../src/generated/prisma"
-  dataProxy = false
+  provider        = "prisma-client"
+  output          = "../src/generated/prisma"
+  dataProxy       = false
   previewFeatures = ["omitApi"]
 }
 
