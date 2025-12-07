@@ -32,6 +32,8 @@ Handles user authentication, processes chat messages, stores expense data, and g
 - **Expenses & Reports: store expenses, generate category reports 📊**
 - **Security: Auth middleware, input validation, safe data handling**
 - **Swagger / OpenAPI: Full API documentation available at /api-docs 📄**
+  <img width="800" height="600" alt="jorge backend api swagger open api docs" src="https://github.com/user-attachments/assets/e1d84014-baf4-4331-9f50-07ad4a392c70" />
+
 
 ## ⚡ Quick Start
 ```bash
