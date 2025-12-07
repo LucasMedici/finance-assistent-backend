@@ -41,6 +41,10 @@ yarn dev
 # access full API documentation at http://localhost:PORT/api-docs
 ```
 
+## 📨 Insomnia Requests
+
+[Insomnia-RequestsFile.yaml](https://github.com/user-attachments/files/24020089/Insomnia-RequestsFile.yaml)
+
 ---
 
 
