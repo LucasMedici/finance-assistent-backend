@@ -1,39 +1,42 @@
-# 💬 Jorge - Assistent
 
-Um assistente pessoal de finanças via Jorge Assistent APP.
+# ⚡ Finance Assistant Backend (Node.js + TypeScript)
 
-O **Jorge - Assistent** permite registrar gastos e gerar relatórios apenas conversando com o Jorge, como:  
-> “Gastei 50 reais no mercado”  
-> “Gere um relatório com meus gastos dos últimos 3 mêses”
+## 🚀 Overview
+Backend API for a virtual finance assistant.
+Handles user authentication, processes chat messages, stores expense data, and generates reports.
 
-As mensagens são recebidas por um **webhook** integrado com a aplicação **React Native**, processadas por um servidor **Node.js (Express)** e armazenadas em um banco **PostgreSQL** via **Prisma ORM**.
+## 🛠 Tech Stack
+- **Node.js + TypeScript**
+- **Express.js**
+- **PostgreSQL via Prisma ORM**
+- **JWT for authentication**
+- **Hosted on Railway**
+- **Supabase for storage/realtime**
+- **Swagger / OpenAPI for full API documentation**
+  
+## 🗂 Project Structure
+```
+/src
+  /@types       🔹 TypeScript interfaces
+  /middlewares  🔹 Auth, error handling
+  /routes       🔹 Express routes
+  /services     🔹 Business logic (chat processing, reports)
+  index.ts      🔹 App entry point
+  swagger.ts    🔹 Swagger/OpenAPI setup
+```
 
-## 🚀 Tecnologias
-- Node.js + Express  
-- TypeScript  
-- Prisma ORM  
-- PostgreSQL  
-- OpenAI API
-- ngrok (para ambiente local)
+## 🔑 Features
 
-## 📦 Execução local
-1. Instale as dependências:
-   ```bash
-   npm install
-   ```
-2. Configure o .env com suas credenciais do banco e Twilio
-   
-4. Inicie o servidor:
-     ```bash
-      npm run dev
-      ```
-4. Exponha o servidor local com o ngrok:
-   ```bash
-   ngrok http 3000
-   ```
+- **Auth: JWT login & session validation 🔑**
+- **Chat: POST webhook/messages, confirmation message ✅**
+- **Expenses & Reports: store expenses, generate category reports 📊**
+- **Security: Auth middleware, input validation, safe data handling**
+- **Swagger / OpenAPI: Full API documentation available at /api-docs 📄**
 
-## ▲ Prisma
-1. Sincronize o banco com as migrations
-   ```bash
-   npx prisma migrate dev
-   ```
+## ⚡ Quick Start
+```bash
+yarn install
+# configure your .env with PORT, DATABASE_URL, OPENAI_API_KEY, JWT_SECRET, JWT_EXPIRES_IN etc (in .env.example)
+yarn start
+# access full API documentation at http://localhost:PORT/api-docs
+```
