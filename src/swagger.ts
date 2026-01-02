@@ -10,8 +10,7 @@ const options: swaggerJsdoc.Options = {
       description: "API do seu assistente financeiro, Jorge.",
     },
     servers: [
-      { url: "http://localhost:3065" },
-      { url: "https://yadiel-inviolate-transactionally.ngrok-free.dev" },
+      { url: "http://localhost:3065" }
     ],
   },
   apis: ["./src/routes/*.ts"], // <-- arquivos onde ficam suas rotas
